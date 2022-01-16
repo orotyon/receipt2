@@ -9,7 +9,7 @@ npm init vite@latest -y receipt2 -- --template vue
 
 npm installして動作確認
 ```sh
-cd inout-vue-app
+cd receipt2
 npm install
 npm run dev
 ```
