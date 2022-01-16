@@ -13,7 +13,50 @@ cd receipt2
 npm install
 npm run dev
 ```
+## firebase のセットアップ
+ツールのインストール
+```sh
+npm install firebase
+firebase init
+# 対話形式で進むので、とりあえず以下を選択
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices.
+(*) Firestore: Configure security rules and indexes files for Firestore
+(*) Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+(*) Hosting: Set up GitHub Action deploys
+(*) Emulators: Set up local emulators for Firebase products
+```
+以下は不要なので削除する
+```
+./public/404.html
+./public/index.html
+```
 
+## firebaseの設定
+[vite公式のFireBase設定](https://ja.vitejs.dev/guide/static-deploy.html#google-firebase)
+
+firebase.json
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
+.firebaserc(firebase init で既存プロジェクトを選択していれば設定済)
+```js
+{
+  "projects": {
+    "default": "<YOUR_FIREBASE_ID>"
+  }
+}
+```
 
 ## Cypressでテスト
 
