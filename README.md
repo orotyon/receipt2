@@ -1,4 +1,4 @@
-# 入力と出力するだけのVUE画面
+# レシートを登録するプログラム
 ## viteプロジェクトの作成 
 [vite公式サイト](https://ja.vitejs.dev/guide/)
 
